@@ -54,7 +54,7 @@ And release is published
 ## Configuration defaults
 ```yaml
 changesDirectory: .unreleased
-changelogName: CHANGELOG.md"
+changelogName: CHANGELOG.md
 git:
   enabled: true
   push: true
