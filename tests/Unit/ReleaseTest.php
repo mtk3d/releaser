@@ -23,14 +23,23 @@ class ReleaseTest extends TestCase
     public function testCreateRelease(): void
     {
         $changes = GenericList::of(
-            new ChangeDTO("feature", "Something new", "Mateusz Cholewka", "PJ-789"),
-            new ChangeDTO("fix", "Fixed something", "Mateusz Cholewka", "PJ-123"),
-            new ChangeDTO("fix", "Fixed something else", "Mateusz Cholewka", "PJ-456")
+            new ChangeDTO("feature", "Add article draft functionality", "John Doe", "ID-123"),
+            new ChangeDTO("fix", "Fix article validation", "Jane Doe", "ID-456"),
+            new ChangeDTO("fix", "Fix category tree building", "Foo Bar", "ID-789")
         );
         $release = $this->releaseFacade
             ->createNextRelease("major", $changes, "1.0.0");
 
-        $this->assertEquals(new ReleaseDTO("2.0.0", "### Feature (1)\n- Something new PJ-789\n### Fix (2)\n- Fixed something PJ-123\n- Fixed something else PJ-456\n"), $release);
+        $releaseNotes = <<<EOL
+            ### Feature (1)
+            - Add article draft functionality ID-123
+            ### Fix (2)
+            - Fix article validation ID-456
+            - Fix category tree building ID-789
+
+            EOL;
+
+        $this->assertEquals(new ReleaseDTO("2.0.0", $releaseNotes), $release);
     }
 
     public function releaseWithoutChanges(): void

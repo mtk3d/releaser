@@ -23,7 +23,12 @@ class ChangelogTest extends TestCase
 
     public function testAppendNewRelease(): void
     {
-        $release = new ReleaseDTO("1.0.0", "## Fix:\n* Something fixed\n");
+        $releaseNotes = <<<EOL
+            ### Fix (1)
+            - Fix article validation
+            EOL;
+
+        $release = new ReleaseDTO("1.0.0", $releaseNotes);
         $this->changelogFacade->appendRelease($release);
 
         $latestRelease = $this->changelogFacade->getLatestRelease()->get();

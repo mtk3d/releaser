@@ -95,9 +95,9 @@ class CreateReleaseTest extends TestCase
     public function testCreateRelease(): void
     {
         $output = self::getStreamOutput();
-        (new ChangeCommand())("fix", "New fix", "PJ-355", "Foo Bar", $this->changeFacade, $output);
+        (new ChangeCommand())("fix", "Fix article validation", "ID-123", "Foo Bar", $this->changeFacade, $output);
         $changeOutput = self::getStreamOutput();
-        (new ChangeCommand())("feature", "New change", "PJ-345", "John Doe", $this->changeFacade, $changeOutput);
+        (new ChangeCommand())("feature", "Add article draft functionality", "ID-456", "John Doe", $this->changeFacade, $changeOutput);
         $releaseOutput = self::getStreamOutput();
         (new ReleaseCommand())(null, "minor", $this->prepareContext, $this->publishContext, $releaseOutput);
 
@@ -105,14 +105,14 @@ class CreateReleaseTest extends TestCase
             Unreleased changes:
             ---
             Type:     fix
-            Message:  New fix
+            Message:  Fix article validation
             Author:   Foo Bar
-            ChangeID: PJ-355
+            ChangeID: ID-123
             ---
             Type:     feature
-            Message:  New change
+            Message:  Add article draft functionality
             Author:   John Doe
-            ChangeID: PJ-345
+            ChangeID: ID-456
             
             Change created successfully
             
@@ -123,9 +123,9 @@ class CreateReleaseTest extends TestCase
             Version: 0.1.0
             Release notes:
             ### Fix (1)
-            - New fix PJ-355
+            - Fix article validation ID-123
             ### Feature (1)
-            - New change PJ-345
+            - Add article draft functionality ID-456
             
             Release created successfully
 
