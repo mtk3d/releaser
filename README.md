@@ -77,3 +77,4 @@ publishers:
 - [ ] Write better docs
 - [ ] Add wizard to create change
 - [ ] Fix git changes checking
+- [ ] Setup deptrac
