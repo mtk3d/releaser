@@ -3,7 +3,6 @@
 
 namespace MTK\Releaser\Publisher;
 
-use Munus\Collection\GenericList;
 use MTK\Releaser\Common\AppConfig;
 use MTK\Releaser\Publisher\Client\ClientFactory;
 

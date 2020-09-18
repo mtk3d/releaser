@@ -3,12 +3,12 @@
 
 namespace MTK\Releaser\Changelog\Infrastructure;
 
-use Munus\Collection\GenericList;
-use Munus\Control\Option;
 use MTK\Releaser\Changelog\Changelog;
 use MTK\Releaser\Changelog\ChangelogManager;
 use MTK\Releaser\Common\AppConfig;
 use MTK\Releaser\Common\ReleaseDTO;
+use Munus\Collection\GenericList;
+use Munus\Control\Option;
 use Symfony\Component\Filesystem\Filesystem;
 
 class FileChangelogManager implements ChangelogManager

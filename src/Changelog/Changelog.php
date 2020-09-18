@@ -2,8 +2,8 @@
 
 namespace MTK\Releaser\Changelog;
 
-use Munus\Collection\GenericList;
 use MTK\Releaser\Common\ReleaseDTO;
+use Munus\Collection\GenericList;
 
 class Changelog
 {

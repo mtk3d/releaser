@@ -3,8 +3,6 @@
 
 namespace MTK\Releaser\Command;
 
-
-use PHPUnit\Framework\TestCase;
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Change\Infrastructure\FileChangeManager;
@@ -21,6 +19,7 @@ use MTK\Releaser\Publisher\PublisherConfiguration;
 use MTK\Releaser\Publisher\PublisherFacade;
 use MTK\Releaser\Release\ReleaseConfiguration;
 use MTK\Releaser\Release\ReleaseFacade;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
 class CreateReleaseTest extends TestCase
@@ -85,7 +84,7 @@ class CreateReleaseTest extends TestCase
         $this->fileChangelogManager = new FileChangelogManager($this->config, $this->filesystem);
         $this->fileChangeManager = new FileChangeManager($this->config, $this->filesystem);
         $this->changeFacade = (new ChangeConfiguration())->changeFacade($this->fileChangeManager);
-        $this->changelogFacade = (new ChangelogConfiguration)->changelogFacade($this->fileChangelogManager);
+        $this->changelogFacade = (new ChangelogConfiguration())->changelogFacade($this->fileChangelogManager);
         $this->releaseFacade = (new ReleaseConfiguration())->releaseFacade();
         $this->gitFacade = (new GitConfiguration())->gitFacade(null, $this->config);
         $this->publisherFacade = (new PublisherConfiguration())->publisherFacade();

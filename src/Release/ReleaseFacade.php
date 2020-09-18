@@ -3,10 +3,10 @@
 
 namespace MTK\Releaser\Release;
 
-use Munus\Collection\GenericList;
-use PHLAK\SemVer\Exceptions\InvalidVersionException;
 use MTK\Releaser\Common\ChangeDTO;
 use MTK\Releaser\Common\ReleaseDTO;
+use Munus\Collection\GenericList;
+use PHLAK\SemVer\Exceptions\InvalidVersionException;
 
 final class ReleaseFacade
 {

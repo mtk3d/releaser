@@ -24,7 +24,7 @@ class GitLabPublisherClient implements PublisherClient
 
     /**
      * GitlabReleasePublisher constructor.
-     * @param array $config
+     * @param array<string> $config
      */
     public function __construct(array $config)
     {

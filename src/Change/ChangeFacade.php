@@ -3,8 +3,8 @@
 
 namespace MTK\Releaser\Change;
 
-use Munus\Collection\GenericList;
 use MTK\Releaser\Common\ChangeDTO;
+use Munus\Collection\GenericList;
 
 final class ChangeFacade
 {

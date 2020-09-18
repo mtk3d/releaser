@@ -3,10 +3,9 @@
 
 namespace MTK\Releaser\Publisher\Client;
 
-
-use Munus\Collection\GenericList;
 use MTK\Releaser\Common\AppConfig;
 use MTK\Releaser\Publisher\PublisherClient;
+use Munus\Collection\GenericList;
 use Webmozart\Assert\Assert;
 
 class ClientFactory
@@ -26,7 +25,13 @@ class ClientFactory
      */
     public function getPublishers(): GenericList
     {
-        return GenericList::ofAll($this->config->get('publishers'))
+        /** @var array<string> $publishers */
+        $publishers = $this->config->get('publishers');
+
+        /** @var GenericList<array<string>> $publishersConfig */
+        $publishersConfig = GenericList::ofAll($publishers);
+
+        return $publishersConfig
             ->map(function (array $config): PublisherClient {
                 Assert::true(isset($config['class']), "Publisher config error");
                 return new $config['class']($config);

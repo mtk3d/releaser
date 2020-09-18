@@ -3,8 +3,6 @@
 namespace MTK\Releaser;
 
 use DI\ContainerBuilder;
-use Noodlehaus\Config;
-use Noodlehaus\Parser\Yaml;
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Change\ChangeManager;
@@ -23,6 +21,8 @@ use MTK\Releaser\Publisher\PublisherConfiguration;
 use MTK\Releaser\Publisher\PublisherFacade;
 use MTK\Releaser\Release\ReleaseConfiguration;
 use MTK\Releaser\Release\ReleaseFacade;
+use Noodlehaus\Config;
+use Noodlehaus\Parser\Yaml;
 use Silly\Edition\PhpDi\Application;
 use Symfony\Component\Filesystem\Filesystem;
 use function DI\autowire;

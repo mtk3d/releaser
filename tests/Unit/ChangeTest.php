@@ -3,10 +3,10 @@
 
 namespace MTK\Releaser\Release;
 
-use PHPUnit\Framework\TestCase;
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Common\ChangeDTO;
+use PHPUnit\Framework\TestCase;
 
 class ChangeTest extends TestCase
 {

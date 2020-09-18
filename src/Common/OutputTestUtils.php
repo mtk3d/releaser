@@ -3,7 +3,6 @@
 
 namespace MTK\Releaser\Common;
 
-
 use Symfony\Component\Console\Output\StreamOutput;
 
 trait OutputTestUtils

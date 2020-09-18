@@ -3,10 +3,10 @@
 
 namespace MTK\Releaser\Release;
 
-use Munus\Collection\GenericList;
-use Munus\Collection\Map;
 use MTK\Releaser\Common\ChangeDTO;
 use MTK\Releaser\Release\ReleaseNotes\ReleaseNotesFormatter;
+use Munus\Collection\GenericList;
+use Munus\Collection\Map;
 
 class ReleaseNotes
 {

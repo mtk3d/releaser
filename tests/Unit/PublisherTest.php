@@ -3,10 +3,10 @@
 
 namespace MTK\Releaser\Publisher;
 
-use Munus\Collection\GenericList;
-use PHPUnit\Framework\TestCase;
 use MTK\Releaser\Common\ReleaseDTO;
 use MTK\Releaser\Publisher\Client\ClientFactory;
+use Munus\Collection\GenericList;
+use PHPUnit\Framework\TestCase;
 
 class PublisherTest extends TestCase
 {

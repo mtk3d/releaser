@@ -2,9 +2,9 @@
 
 namespace MTK\Releaser\Publisher;
 
-use Munus\Collection\GenericList;
 use MTK\Releaser\Common\ReleaseDTO;
 use MTK\Releaser\Publisher\Client\ClientFactory;
+use Munus\Collection\GenericList;
 
 class PublisherFacade
 {

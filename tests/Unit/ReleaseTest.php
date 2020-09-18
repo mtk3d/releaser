@@ -2,10 +2,10 @@
 
 namespace MTK\Releaser\Release;
 
-use Munus\Collection\GenericList;
-use PHPUnit\Framework\TestCase;
 use MTK\Releaser\Common\ChangeDTO;
 use MTK\Releaser\Common\ReleaseDTO;
+use Munus\Collection\GenericList;
+use PHPUnit\Framework\TestCase;
 
 class ReleaseTest extends TestCase
 {

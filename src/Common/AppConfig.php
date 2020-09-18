@@ -6,6 +6,9 @@ use Noodlehaus\AbstractConfig;
 
 class AppConfig extends AbstractConfig
 {
+    /**
+     * @return array<string|array>
+     */
     protected function getDefaults(): array
     {
         return [

@@ -2,11 +2,11 @@
 
 namespace MTK\Releaser\Command\Release;
 
-use PHLAK\SemVer\Exceptions\InvalidVersionException;
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Changelog\ChangelogFacade;
 use MTK\Releaser\Common\ReleaseDTO;
 use MTK\Releaser\Release\ReleaseFacade;
+use PHLAK\SemVer\Exceptions\InvalidVersionException;
 
 class PrepareContext
 {
@@ -34,12 +34,12 @@ class PrepareContext
     }
 
     /**
-     * @param $type
-     * @param $version
+     * @param string|null $type
+     * @param string|null $version
      * @return ReleaseDTO
      * @throws InvalidVersionException
      */
-    public function prepareRelease($type, $version): ReleaseDTO
+    public function prepareRelease(?string $type, ?string $version): ReleaseDTO
     {
         $releaseType = $type ?: 'minor';
 

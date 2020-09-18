@@ -3,11 +3,11 @@
 
 namespace MTK\Releaser\Change\Infrastructure;
 
-use Munus\Collection\GenericList;
-use Munus\Control\Option;
 use MTK\Releaser\Change\Change;
 use MTK\Releaser\Change\ChangeManager;
 use MTK\Releaser\Common\AppConfig;
+use Munus\Collection\GenericList;
+use Munus\Control\Option;
 use Symfony\Component\Filesystem\Filesystem;
 
 class FileChangeManager implements ChangeManager

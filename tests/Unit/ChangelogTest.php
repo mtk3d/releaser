@@ -3,10 +3,10 @@
 
 namespace MTK\Releaser\Release;
 
-use PHPUnit\Framework\TestCase;
 use MTK\Releaser\Changelog\ChangelogConfiguration;
 use MTK\Releaser\Changelog\ChangelogFacade;
 use MTK\Releaser\Common\ReleaseDTO;
+use PHPUnit\Framework\TestCase;
 
 class ChangelogTest extends TestCase
 {

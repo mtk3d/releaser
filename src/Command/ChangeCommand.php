@@ -25,12 +25,11 @@ class ChangeCommand extends Command
         ?string $author,
         ChangeFacade $changeFacade,
         OutputInterface $output
-    ): int
-    {
+    ): int {
         $changeId = $changeId ?: "";
 
         if ($author === null) {
-           // @TODO Take author from git or config or something else
+            // @TODO Take author from git or config or something else
             $author = "John Doe";
         }
 

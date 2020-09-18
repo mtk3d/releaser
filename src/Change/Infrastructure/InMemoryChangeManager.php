@@ -2,9 +2,9 @@
 
 namespace MTK\Releaser\Change\Infrastructure;
 
-use Munus\Collection\GenericList;
 use MTK\Releaser\Change\Change;
 use MTK\Releaser\Change\ChangeManager;
+use Munus\Collection\GenericList;
 
 class InMemoryChangeManager implements ChangeManager
 {

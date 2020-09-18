@@ -2,9 +2,9 @@
 
 namespace MTK\Releaser\Command;
 
-use PHLAK\SemVer\Exceptions\InvalidVersionException;
 use MTK\Releaser\Command\Release\PrepareContext;
 use MTK\Releaser\Command\Release\PublishContext;
+use PHLAK\SemVer\Exceptions\InvalidVersionException;
 use Silly\Command\Command;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -24,8 +24,7 @@ class ReleaseCommand extends Command
         PrepareContext $prepareContext,
         PublishContext $publishContext,
         OutputInterface $output
-    ): int
-    {
+    ): int {
         if ($publishContext->hasUncommittedChanges()) {
             $output->write("You have uncommitted changes in your repository", true);
             return 1;
