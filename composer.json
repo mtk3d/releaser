@@ -1,6 +1,6 @@
 {
     "name": "mtk/releaser",
-    "description": "Generate CHANGELOG.md from developer changes",
+    "description": "Generate CHANGELOG.md file from developers changes",
     "type": "library",
     "license": "MIT",
     "authors": [
