@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Publisher;
 
-use MTK\Releaser\Common\AppConfig;
+use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Publisher\Client\ClientFactory;
 
 class PublisherConfiguration

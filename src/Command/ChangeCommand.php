@@ -3,7 +3,7 @@
 namespace MTK\Releaser\Command;
 
 use MTK\Releaser\Change\ChangeFacade;
-use MTK\Releaser\Common\ChangeDTO;
+use MTK\Releaser\Shared\ChangeDTO;
 use Silly\Command\Command;
 use Symfony\Component\Console\Output\OutputInterface;
 

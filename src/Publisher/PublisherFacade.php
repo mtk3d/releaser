@@ -2,7 +2,7 @@
 
 namespace MTK\Releaser\Publisher;
 
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 use MTK\Releaser\Publisher\Client\ClientFactory;
 use Munus\Collection\GenericList;
 

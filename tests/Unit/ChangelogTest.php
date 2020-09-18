@@ -5,7 +5,7 @@ namespace MTK\Releaser\Release;
 
 use MTK\Releaser\Changelog\ChangelogConfiguration;
 use MTK\Releaser\Changelog\ChangelogFacade;
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 use PHPUnit\Framework\TestCase;
 
 class ChangelogTest extends TestCase

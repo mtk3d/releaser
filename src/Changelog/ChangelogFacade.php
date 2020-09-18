@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Changelog;
 
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Control\Option;
 
 final class ChangelogFacade

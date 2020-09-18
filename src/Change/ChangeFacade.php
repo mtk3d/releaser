@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Change;
 
-use MTK\Releaser\Common\ChangeDTO;
+use MTK\Releaser\Shared\ChangeDTO;
 use Munus\Collection\GenericList;
 
 final class ChangeFacade

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MTK\Releaser\Common;
+namespace MTK\Releaser\Shared;
 
 use Webmozart\Assert\Assert;
 

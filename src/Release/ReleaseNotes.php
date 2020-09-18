@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Release;
 
-use MTK\Releaser\Common\ChangeDTO;
+use MTK\Releaser\Shared\ChangeDTO;
 use MTK\Releaser\Release\ReleaseNotes\ReleaseNotesFormatter;
 use Munus\Collection\GenericList;
 use Munus\Collection\Map;

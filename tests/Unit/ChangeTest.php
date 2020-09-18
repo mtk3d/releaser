@@ -5,7 +5,7 @@ namespace MTK\Releaser\Release;
 
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
-use MTK\Releaser\Common\ChangeDTO;
+use MTK\Releaser\Shared\ChangeDTO;
 use PHPUnit\Framework\TestCase;
 
 class ChangeTest extends TestCase

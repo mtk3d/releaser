@@ -2,8 +2,8 @@
 
 namespace MTK\Releaser\Git;
 
-use MTK\Releaser\Common\AppConfig;
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
+use MTK\Releaser\Shared\AppConfig;
 
 class GitFacade
 {

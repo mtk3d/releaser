@@ -2,7 +2,7 @@
 
 namespace MTK\Releaser\Change;
 
-use MTK\Releaser\Common\ChangeDTO;
+use MTK\Releaser\Shared\ChangeDTO;
 
 class Change
 {

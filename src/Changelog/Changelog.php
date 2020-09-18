@@ -2,7 +2,7 @@
 
 namespace MTK\Releaser\Changelog;
 
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Collection\GenericList;
 
 class Changelog

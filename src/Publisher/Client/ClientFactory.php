@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Publisher\Client;
 
-use MTK\Releaser\Common\AppConfig;
+use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Publisher\PublisherClient;
 use Munus\Collection\GenericList;
 use Webmozart\Assert\Assert;

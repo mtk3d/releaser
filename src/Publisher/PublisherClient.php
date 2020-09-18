@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Publisher;
 
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 
 interface PublisherClient
 {

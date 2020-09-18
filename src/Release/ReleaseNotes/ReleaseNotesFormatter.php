@@ -3,7 +3,7 @@
 
 namespace MTK\Releaser\Release\ReleaseNotes;
 
-use MTK\Releaser\Common\ChangeDTO;
+use MTK\Releaser\Shared\ChangeDTO;
 use Munus\Collection\GenericList;
 use Munus\Collection\Map;
 use Munus\Tuple;

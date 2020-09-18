@@ -3,7 +3,7 @@
 namespace MTK\Releaser\Command\Release;
 
 use MTK\Releaser\Changelog\ChangelogFacade;
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 use MTK\Releaser\Git\GitFacade;
 use MTK\Releaser\Publisher\PublisherFacade;
 

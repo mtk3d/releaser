@@ -3,8 +3,8 @@
 
 namespace MTK\Releaser\Git;
 
-use MTK\Releaser\Common\AppConfig;
 use MTK\Releaser\Git\Client\GitCliClient;
+use MTK\Releaser\Shared\AppConfig;
 
 class GitConfiguration
 {

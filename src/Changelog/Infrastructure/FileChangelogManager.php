@@ -5,8 +5,8 @@ namespace MTK\Releaser\Changelog\Infrastructure;
 
 use MTK\Releaser\Changelog\Changelog;
 use MTK\Releaser\Changelog\ChangelogManager;
-use MTK\Releaser\Common\AppConfig;
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\AppConfig;
+use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Collection\GenericList;
 use Munus\Control\Option;
 use Symfony\Component\Filesystem\Filesystem;

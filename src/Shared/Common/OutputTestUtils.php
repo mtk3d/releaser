@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MTK\Releaser\Common;
+namespace MTK\Releaser\Shared\Common;
 
 use Symfony\Component\Console\Output\StreamOutput;
 

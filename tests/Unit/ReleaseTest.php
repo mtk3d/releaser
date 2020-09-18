@@ -2,8 +2,8 @@
 
 namespace MTK\Releaser\Release;
 
-use MTK\Releaser\Common\ChangeDTO;
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ChangeDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Collection\GenericList;
 use PHPUnit\Framework\TestCase;
 

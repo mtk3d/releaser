@@ -2,7 +2,7 @@
 
 namespace MTK\Releaser\Release;
 
-use MTK\Releaser\Common\ReleaseDTO;
+use MTK\Releaser\Shared\ReleaseDTO;
 
 class Release
 {
