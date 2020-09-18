@@ -62,7 +62,7 @@ git:
 publishers: {}
 ```
 
-## Configure GitLab release
+## Configure GitLab publisher
 ```yaml
 publishers:
   class: GitLabPublisherClient
