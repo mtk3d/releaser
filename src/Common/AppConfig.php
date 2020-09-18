@@ -9,7 +9,7 @@ class AppConfig extends AbstractConfig
     protected function getDefaults(): array
     {
         return [
-            "changesDirectory" => "./.unreleased",
+            "changesDirectory" => ".unreleased",
             "changelogName" => "CHANGELOG.md",
             "git" => [
                 "enabled" => true,
