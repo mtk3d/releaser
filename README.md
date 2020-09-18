@@ -37,7 +37,7 @@ Background: We have git repository on GitLab, and developer with his own branch
 
 Given branch with uncommited changes
 When developer make new change
-Then new change file will be created
+Then new change file is created
 ```
 
 ```gherkin
@@ -45,10 +45,10 @@ Feature: Create new release
 Background: We have git repository on GitLab, with merged developer's branches to master
 
 Given master branch with unreleased changes
-When maintainer will release new version
-Then changelog file will be updated
-And new git tag will be created
-And release will be published
+When maintainer release new version
+Then changelog file is updated
+And new git tag is created
+And release is published
 ```
 
 ## Configuration defaults
