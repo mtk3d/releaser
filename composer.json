@@ -1,7 +1,18 @@
 {
-    "name": "mtk3d/releaser",
+    "name": "mtk/releaser",
+    "description": "Generate CHANGELOG.md from developer changes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mateusz Cholewka",
+            "email": "mateusz@cholewka.com.pl"
+        }
+    ],
     "bin": ["bin/releaser"],
+    "minimum-stability": "dev",
     "require": {
+        "php": ">=7.4",
         "phlak/semver": "^3.2",
         "myclabs/php-enum": "^1.7",
         "munusphp/munus": "^0.2.2",
