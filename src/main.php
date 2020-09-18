@@ -6,7 +6,7 @@ use MTK\Releaser\Kernel;
 
 $app = new Kernel("Releaser", "0.1.0");
 
-$app->command('new [type] [message] [changeId]', ChangeCommand::class)
+$app->command('new [type] [message] [changeId] [author]', ChangeCommand::class)
     ->descriptions(
         'Create new changelog entry',
         [

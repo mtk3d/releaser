@@ -72,6 +72,7 @@ publishers:
 ```
 
 ## TODO
+- [ ] Replace Noodlehaus\Config package
 - [ ] Add more publishers, and test custom publisher
 - [ ] Refactor functional test for DI container usage
 - [ ] Write better docs
