@@ -3,6 +3,4 @@
 
 ini_set('html_errors', 'off');
 
-putenv("RELEASER_HOME=" . realpath(__DIR__ . '/../'));
-
 require_once __DIR__ . '/releaser.php';
