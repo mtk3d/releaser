@@ -15,7 +15,7 @@
         "php": ">=7.4",
         "phlak/semver": "^3.2",
         "myclabs/php-enum": "^1.7",
-        "munusphp/munus": "^0.2.2",
+        "munusphp/munus": "^0.4.0",
         "webmozart/assert": "^1.9",
         "symfony/filesystem": "^5.1",
         "guzzlehttp/guzzle": "^7.0",
@@ -34,6 +34,11 @@
     "autoload": {
         "psr-4": {
             "MTK\\Releaser\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
