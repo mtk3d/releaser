@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MTK\Releaser\Command;
+namespace MTK\Releaser\Tests\Functional;
 
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
@@ -9,8 +9,10 @@ use MTK\Releaser\Change\Infrastructure\FileChangeManager;
 use MTK\Releaser\Changelog\ChangelogConfiguration;
 use MTK\Releaser\Changelog\ChangelogFacade;
 use MTK\Releaser\Changelog\Infrastructure\FileChangelogManager;
+use MTK\Releaser\Command\ChangeCommand;
 use MTK\Releaser\Command\Release\PrepareContext;
 use MTK\Releaser\Command\Release\PublishContext;
+use MTK\Releaser\Command\ReleaseCommand;
 use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
 use MTK\Releaser\Git\GitConfiguration;

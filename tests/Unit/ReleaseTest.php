@@ -1,7 +1,9 @@
 <?php
 
-namespace MTK\Releaser\Release;
+namespace MTK\Releaser\Tests\Unit;
 
+use MTK\Releaser\Release\ReleaseConfiguration;
+use MTK\Releaser\Release\ReleaseFacade;
 use MTK\Releaser\Shared\ChangeDTO;
 use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Collection\GenericList;

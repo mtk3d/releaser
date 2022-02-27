@@ -34,7 +34,8 @@
     },
     "autoload": {
         "psr-4": {
-            "MTK\\Releaser\\": "src/"
+            "MTK\\Releaser\\": "src/",
+            "MTK\\Releaser\\Tests\\": "tests/"
         }
     },
     "config": {

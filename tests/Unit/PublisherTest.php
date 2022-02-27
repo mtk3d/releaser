@@ -1,8 +1,10 @@
 <?php
 
 
-namespace MTK\Releaser\Publisher;
+namespace MTK\Releaser\Tests\Unit;
 
+use MTK\Releaser\Publisher\PublisherClient;
+use MTK\Releaser\Publisher\PublisherConfiguration;
 use MTK\Releaser\Shared\ReleaseDTO;
 use MTK\Releaser\Publisher\Client\ClientFactory;
 use Munus\Collection\GenericList;

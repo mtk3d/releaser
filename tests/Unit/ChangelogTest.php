@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MTK\Releaser\Release;
+namespace MTK\Releaser\Tests\Unit;
 
 use MTK\Releaser\Changelog\ChangelogConfiguration;
 use MTK\Releaser\Changelog\ChangelogFacade;
