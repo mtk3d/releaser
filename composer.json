@@ -36,7 +36,8 @@
         "psr-4": {
             "MTK\\Releaser\\": "src/",
             "MTK\\Releaser\\Tests\\": "tests/"
-        }
+        },
+        "files": ["tests/Fixtures/ChangeFixtures.php"]
     },
     "config": {
         "allow-plugins": {
