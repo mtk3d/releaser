@@ -9,3 +9,4 @@ example
 CHANGELOG.md
 test-env
 .DS_Store
+.php-cs-fixer.cache
