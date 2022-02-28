@@ -7,8 +7,8 @@ use MTK\Releaser\Release\ReleaseFacade;
 use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Collection\GenericList;
 use PHPUnit\Framework\TestCase;
-use function MTK\Releaser\Tests\Fixtures\aFixChange;
-use function MTK\Releaser\Tests\Fixtures\aFeatureChange;
+use function MTK\Releaser\Tests\Fixture\aFixChange;
+use function MTK\Releaser\Tests\Fixture\aFeatureChange;
 
 class ReleaseTest extends TestCase
 {

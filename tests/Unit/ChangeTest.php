@@ -6,7 +6,7 @@ namespace MTK\Releaser\Tests\Unit;
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
 use PHPUnit\Framework\TestCase;
-use function MTK\Releaser\Tests\Fixtures\aFixChange;
+use function MTK\Releaser\Tests\Fixture\aFixChange;
 
 class ChangeTest extends TestCase
 {

@@ -40,8 +40,8 @@
         "files": [
             "config/services.php",
             "config/dev_services.php",
-            "tests/Fixtures/ChangeFixtures.php",
-            "tests/Fixtures/ReleaseFixture.php"
+            "tests/Fixture/ChangeFixture.php",
+            "tests/Fixture/ReleaseFixture.php"
         ]
     },
     "config": {
