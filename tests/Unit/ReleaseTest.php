@@ -4,10 +4,11 @@ namespace MTK\Releaser\Tests\Unit;
 
 use MTK\Releaser\Release\ReleaseConfiguration;
 use MTK\Releaser\Release\ReleaseFacade;
-use MTK\Releaser\Shared\ChangeDTO;
 use MTK\Releaser\Shared\ReleaseDTO;
 use Munus\Collection\GenericList;
 use PHPUnit\Framework\TestCase;
+use function MTK\Releaser\Tests\Fixtures\aFixChange;
+use function MTK\Releaser\Tests\Fixtures\aFeatureChange;
 
 class ReleaseTest extends TestCase
 {
@@ -25,9 +26,9 @@ class ReleaseTest extends TestCase
     public function testCreateRelease(): void
     {
         $changes = GenericList::of(
-            new ChangeDTO("feature", "Add article draft functionality", "John Doe", "ID-123"),
-            new ChangeDTO("fix", "Fix article validation", "Jane Doe", "ID-456"),
-            new ChangeDTO("fix", "Fix category tree building", "Foo Bar", "ID-789")
+            aFeatureChange("Add article draft functionality"),
+            aFixChange("Fix article validation", "ID-456"),
+            aFixChange("Fix category tree building", "ID-789"),
         );
         $release = $this->releaseFacade
             ->createNextRelease("major", $changes, "1.0.0");
