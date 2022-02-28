@@ -3,24 +3,16 @@
 
 namespace MTK\Releaser\Tests\Functional;
 
-use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
-use MTK\Releaser\Change\Infrastructure\FileChangeManager;
-use MTK\Releaser\Changelog\ChangelogConfiguration;
-use MTK\Releaser\Changelog\Infrastructure\FileChangelogManager;
 use MTK\Releaser\Command\ChangeCommand;
 use MTK\Releaser\Command\Release\PrepareContext;
 use MTK\Releaser\Command\Release\PublishContext;
 use MTK\Releaser\Command\ReleaseCommand;
 use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
-use MTK\Releaser\Git\GitConfiguration;
-use MTK\Releaser\Publisher\PublisherConfiguration;
-use MTK\Releaser\Release\ReleaseConfiguration;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
-class CreateReleaseTest extends TestCase
+class CreateReleaseTest extends BaseTest
 {
     use OutputTestUtils;
 
@@ -32,23 +24,16 @@ class CreateReleaseTest extends TestCase
 
     public function setUp(): void
     {
-        parent::setUp();
         if (!file_exists('test-env')) {
             mkdir('test-env', 0777, true);
         }
         chdir('test-env');
 
-        $this->config = new AppConfig(["git" => ["enabled" => false]]);
-        $this->filesystem = new Filesystem();
-        $fileChangelogManager = new FileChangelogManager($this->config, $this->filesystem);
-        $fileChangeManager = new FileChangeManager($this->config, $this->filesystem);
-        $this->changeFacade = (new ChangeConfiguration())->changeFacade($fileChangeManager);
-        $changelogFacade = (new ChangelogConfiguration())->changelogFacade($fileChangelogManager);
-        $releaseFacade = (new ReleaseConfiguration())->releaseFacade();
-        $gitFacade = (new GitConfiguration())->gitFacade(null, $this->config);
-        $publisherFacade = (new PublisherConfiguration())->publisherFacade();
-        $this->prepareContext = new PrepareContext($changelogFacade, $this->changeFacade, $releaseFacade);
-        $this->publishContext = new PublishContext($changelogFacade, $gitFacade, $publisherFacade);
+        $this->config = $this->container->get(AppConfig::class);
+        $this->filesystem = $this->container->get(Filesystem::class);
+        $this->changeFacade = $this->container->get(ChangeFacade::class);
+        $this->prepareContext = $this->container->get(PrepareContext::class);
+        $this->publishContext = $this->container->get(PublishContext::class);
     }
 
     public function testCreateRelease(): void
