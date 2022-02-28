@@ -7,8 +7,11 @@ use MTK\Releaser\Shared\ReleaseDTO;
 function aRelease(string $version = "1.0.0"): ReleaseDTO
 {
     $releaseNotes = <<<EOL
-        ### Fix (1)
-        - Fix article validation
+        ### Feature (1)
+        - Add article draft functionality ID-123
+        ### Fix (2)
+        - Fix article validation ID-456
+        - Fix category tree building ID-789
         EOL;
 
     return new ReleaseDTO($version, $releaseNotes);

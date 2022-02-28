@@ -14,15 +14,7 @@ class PublisherTest extends TestCase
 {
     public function testPublishRelease(): void
     {
-        $releaseNotes = <<<EOL
-            ### Feature (1)
-            - Add article draft functionality ID-123
-            ### Fix (2)
-            - Fix article validation ID-456
-            - Fix category tree building ID-789
-            EOL;
-
-        $release = new ReleaseDTO("2.0.0", $releaseNotes);
+        $release = aRelease();
 
         $publisher = $this->createMock(PublisherClient::class);
         $publisher->expects($this->exactly(2))
