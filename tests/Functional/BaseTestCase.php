@@ -16,6 +16,11 @@ class BaseTestCase extends TestCase
 
     public function setUp(): void
     {
+        if (!file_exists('test-env')) {
+            mkdir('test-env', 0777, true);
+        }
+        chdir('test-env');
+
         $builder = new ContainerBuilder();
         $builder->addDefinitions(services());
         $builder->addDefinitions(dev_services());

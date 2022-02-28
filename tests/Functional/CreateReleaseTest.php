@@ -12,7 +12,7 @@ use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
 use Symfony\Component\Filesystem\Filesystem;
 
-class CreateReleaseTestCase extends BaseTestCase
+class CreateReleaseTest extends BaseTestCase
 {
     use OutputTestUtils;
 
@@ -74,7 +74,6 @@ class CreateReleaseTestCase extends BaseTestCase
 
         $this->assertEquals($changeExpected, self::getDisplay($changeOutput));
         $this->assertEquals($releaseExpected, self::getDisplay($releaseOutput));
-        $this->fail();
     }
 
     public function tearDown(): void
