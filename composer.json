@@ -41,7 +41,8 @@
         "files": [
             "config/dev_services.php",
             "tests/Fixture/ChangeFixture.php",
-            "tests/Fixture/ReleaseFixture.php"
+            "tests/Fixture/ReleaseFixture.php",
+            "tests/Fixture/CommandFixture.php"
         ]
     },
     "config": {
