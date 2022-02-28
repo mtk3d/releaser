@@ -50,9 +50,11 @@
     "scripts": {
         "test": "phpunit",
         "lint": "ecs",
+        "types": "phpstan analyse src",
         "check": [
             "@lint",
-            "@test"
+            "@test",
+            "@types"
         ]
     }
 }
