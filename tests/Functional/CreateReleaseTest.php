@@ -7,7 +7,6 @@ use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Change\Infrastructure\FileChangeManager;
 use MTK\Releaser\Changelog\ChangelogConfiguration;
-use MTK\Releaser\Changelog\ChangelogFacade;
 use MTK\Releaser\Changelog\Infrastructure\FileChangelogManager;
 use MTK\Releaser\Command\ChangeCommand;
 use MTK\Releaser\Command\Release\PrepareContext;
@@ -16,11 +15,8 @@ use MTK\Releaser\Command\ReleaseCommand;
 use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
 use MTK\Releaser\Git\GitConfiguration;
-use MTK\Releaser\Git\GitFacade;
 use MTK\Releaser\Publisher\PublisherConfiguration;
-use MTK\Releaser\Publisher\PublisherFacade;
 use MTK\Releaser\Release\ReleaseConfiguration;
-use MTK\Releaser\Release\ReleaseFacade;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -28,50 +24,11 @@ class CreateReleaseTest extends TestCase
 {
     use OutputTestUtils;
 
-    /**
-     * @var ChangeFacade
-     */
     private ChangeFacade $changeFacade;
-    /**
-     * @var Filesystem
-     */
     private Filesystem $filesystem;
-    /**
-     * @var AppConfig
-     */
     private AppConfig $config;
-    /**
-     * @var FileChangelogManager
-     */
-    private FileChangelogManager $fileChangelogManager;
-    /**
-     * @var PrepareContext
-     */
     private PrepareContext $prepareContext;
-    /**
-     * @var PublishContext
-     */
     private PublishContext $publishContext;
-    /**
-     * @var FileChangeManager
-     */
-    private FileChangeManager $fileChangeManager;
-    /**
-     * @var ChangelogFacade
-     */
-    private ChangelogFacade $changelogFacade;
-    /**
-     * @var ReleaseFacade
-     */
-    private ReleaseFacade $releaseFacade;
-    /**
-     * @var GitFacade
-     */
-    private GitFacade $gitFacade;
-    /**
-     * @var PublisherFacade
-     */
-    private PublisherFacade $publisherFacade;
 
     public function setUp(): void
     {
@@ -83,15 +40,15 @@ class CreateReleaseTest extends TestCase
 
         $this->config = new AppConfig(["git" => ["enabled" => false]]);
         $this->filesystem = new Filesystem();
-        $this->fileChangelogManager = new FileChangelogManager($this->config, $this->filesystem);
-        $this->fileChangeManager = new FileChangeManager($this->config, $this->filesystem);
-        $this->changeFacade = (new ChangeConfiguration())->changeFacade($this->fileChangeManager);
-        $this->changelogFacade = (new ChangelogConfiguration())->changelogFacade($this->fileChangelogManager);
-        $this->releaseFacade = (new ReleaseConfiguration())->releaseFacade();
-        $this->gitFacade = (new GitConfiguration())->gitFacade(null, $this->config);
-        $this->publisherFacade = (new PublisherConfiguration())->publisherFacade();
-        $this->prepareContext = new PrepareContext($this->changelogFacade, $this->changeFacade, $this->releaseFacade);
-        $this->publishContext = new PublishContext($this->changelogFacade, $this->gitFacade, $this->publisherFacade);
+        $fileChangelogManager = new FileChangelogManager($this->config, $this->filesystem);
+        $fileChangeManager = new FileChangeManager($this->config, $this->filesystem);
+        $this->changeFacade = (new ChangeConfiguration())->changeFacade($fileChangeManager);
+        $changelogFacade = (new ChangelogConfiguration())->changelogFacade($fileChangelogManager);
+        $releaseFacade = (new ReleaseConfiguration())->releaseFacade();
+        $gitFacade = (new GitConfiguration())->gitFacade(null, $this->config);
+        $publisherFacade = (new PublisherConfiguration())->publisherFacade();
+        $this->prepareContext = new PrepareContext($changelogFacade, $this->changeFacade, $releaseFacade);
+        $this->publishContext = new PublishContext($changelogFacade, $gitFacade, $publisherFacade);
     }
 
     public function testCreateRelease(): void
