@@ -12,7 +12,7 @@ use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
 use Symfony\Component\Filesystem\Filesystem;
 
-class CreateReleaseTest extends BaseTest
+class CreateReleaseTestCase extends BaseTestCase
 {
     use OutputTestUtils;
 

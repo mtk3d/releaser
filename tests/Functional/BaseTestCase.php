@@ -9,7 +9,7 @@ use DI\ContainerBuilder;
 use MTK\Releaser\Kernel;
 use PHPUnit\Framework\TestCase;
 
-class BaseTest extends TestCase
+class BaseTestCase extends TestCase
 {
     protected Container $container;
     protected Kernel $app;
