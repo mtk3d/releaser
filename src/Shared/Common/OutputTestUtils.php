@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 
 namespace MTK\Releaser\Shared\Common;
 
@@ -9,12 +11,17 @@ trait OutputTestUtils
 {
     public static function getStreamOutput(): StreamOutput
     {
-        return new StreamOutput(fopen('php://memory', 'w', false));
+        $resource = fopen('php://memory', 'w', false);
+        if (!$resource) {
+            throw new \RuntimeException("Cannot open in memory resource");
+        }
+
+        return new StreamOutput($resource);
     }
 
     public static function getDisplay(StreamOutput $output): string
     {
         rewind($output->getStream());
-        return stream_get_contents($output->getStream());
+        return stream_get_contents($output->getStream()) ?: '';
     }
 }

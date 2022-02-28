@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Change;
 
 use MTK\Releaser\Shared\ChangeDTO;
@@ -31,6 +33,11 @@ class Change
 
     public function getChangeDTO(): ChangeDTO
     {
-        return new ChangeDTO($this->type, $this->message, $this->author, $this->changeId);
+        return new ChangeDTO(
+            (string) $this->type,
+            (string) $this->message,
+            (string) $this->author,
+            (string) $this->changeId
+        );
     }
 }

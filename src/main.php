@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use MTK\Releaser\Command\ChangeCommand;
 use MTK\Releaser\Command\ReleaseCommand;
 use MTK\Releaser\Kernel;

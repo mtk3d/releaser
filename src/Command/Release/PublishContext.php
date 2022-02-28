@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Command\Release;
 
 use MTK\Releaser\Changelog\ChangelogFacade;
-use MTK\Releaser\Shared\ReleaseDTO;
 use MTK\Releaser\Git\GitFacade;
 use MTK\Releaser\Publisher\PublisherFacade;
+use MTK\Releaser\Shared\ReleaseDTO;
 
 class PublishContext
 {

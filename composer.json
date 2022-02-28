@@ -52,12 +52,18 @@
     },
     "scripts": {
         "test": "phpunit",
-        "lint": "ecs",
-        "types": "phpstan analyse src",
+        "sniffer": "ecs check src tests",
+        "phpstan": "phpstan analyse src tests",
+        "lint": [
+            "@sniffer",
+            "@phpstan"
+        ],
         "check": [
             "@lint",
-            "@test",
-            "@types"
+            "@test"
+        ],
+        "fix": [
+            "@sniffer --fix"
         ]
     }
 }

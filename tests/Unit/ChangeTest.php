@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 
 namespace MTK\Releaser\Tests\Unit;
 
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
-use PHPUnit\Framework\TestCase;
 use function MTK\Releaser\Tests\Fixture\aFixChange;
+use PHPUnit\Framework\TestCase;
 
 class ChangeTest extends TestCase
 {

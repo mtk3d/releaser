@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 
 namespace MTK\Releaser\Publisher\Client;
 
-use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Publisher\PublisherClient;
+use MTK\Releaser\Shared\AppConfig;
 use Munus\Collection\GenericList;
 use Webmozart\Assert\Assert;
 

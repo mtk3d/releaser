@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 
 namespace MTK\Releaser\Publisher;
 
-use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Publisher\Client\ClientFactory;
+use MTK\Releaser\Shared\AppConfig;
 
 class PublisherConfiguration
 {

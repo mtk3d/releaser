@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Git\Client;
 
 use MrRio\ShellWrap as sh;

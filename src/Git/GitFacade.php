@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Git;
 
-use MTK\Releaser\Shared\ReleaseDTO;
 use MTK\Releaser\Shared\AppConfig;
+use MTK\Releaser\Shared\ReleaseDTO;
 
 class GitFacade
 {

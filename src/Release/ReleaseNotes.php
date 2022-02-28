@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 
 namespace MTK\Releaser\Release;
 
-use MTK\Releaser\Shared\ChangeDTO;
 use MTK\Releaser\Release\ReleaseNotes\ReleaseNotesFormatter;
+use MTK\Releaser\Shared\ChangeDTO;
 use Munus\Collection\GenericList;
 use Munus\Collection\Map;
 

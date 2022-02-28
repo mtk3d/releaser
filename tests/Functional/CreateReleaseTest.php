@@ -9,10 +9,10 @@ use MTK\Releaser\Command\Release\PrepareContext;
 use MTK\Releaser\Command\Release\PublishContext;
 use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
-use Symfony\Component\Filesystem\Filesystem;
 use function MTK\Releaser\Tests\Fixture\runFeatureChangeCommand;
 use function MTK\Releaser\Tests\Fixture\runFixChangeCommand;
 use function MTK\Releaser\Tests\Fixture\runReleaseMinorCommand;
+use Symfony\Component\Filesystem\Filesystem;
 
 class CreateReleaseTest extends BaseTestCase
 {

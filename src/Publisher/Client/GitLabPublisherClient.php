@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Publisher\Client;
 
 use GuzzleHttp;
 use MTK\Releaser\Publisher\PublisherClient;
-use Webmozart\Assert\Assert;
 use MTK\Releaser\Shared\ReleaseDTO;
+use Webmozart\Assert\Assert;
 
 class GitLabPublisherClient implements PublisherClient
 {

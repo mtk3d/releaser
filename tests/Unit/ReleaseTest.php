@@ -1,14 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Tests\Unit;
 
 use MTK\Releaser\Release\ReleaseConfiguration;
 use MTK\Releaser\Release\ReleaseFacade;
-use MTK\Releaser\Shared\ReleaseDTO;
+use function MTK\Releaser\Tests\Fixture\aFeatureChange;
+use function MTK\Releaser\Tests\Fixture\aFixChange;
 use Munus\Collection\GenericList;
 use PHPUnit\Framework\TestCase;
-use function MTK\Releaser\Tests\Fixture\aFixChange;
-use function MTK\Releaser\Tests\Fixture\aFeatureChange;
 
 class ReleaseTest extends TestCase
 {

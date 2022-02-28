@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 
 namespace MTK\Releaser\Tests\Unit;
 
+use MTK\Releaser\Publisher\Client\ClientFactory;
 use MTK\Releaser\Publisher\PublisherClient;
 use MTK\Releaser\Publisher\PublisherConfiguration;
-use MTK\Releaser\Publisher\Client\ClientFactory;
 use Munus\Collection\GenericList;
 use PHPUnit\Framework\TestCase;
 

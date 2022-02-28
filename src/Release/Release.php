@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Release;
 
 use MTK\Releaser\Shared\ReleaseDTO;

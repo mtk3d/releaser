@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Change\Infrastructure;
 
 use MTK\Releaser\Change\Change;

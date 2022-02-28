@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MTK\Releaser\Command;
 
 use MTK\Releaser\Change\ChangeFacade;
