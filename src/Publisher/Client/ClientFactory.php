@@ -10,9 +10,6 @@ use Webmozart\Assert\Assert;
 
 class ClientFactory
 {
-    /**
-     * @var AppConfig
-     */
     private AppConfig $config;
 
     public function __construct(AppConfig $config)

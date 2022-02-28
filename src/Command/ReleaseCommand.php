@@ -10,14 +10,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ReleaseCommand extends Command
 {
-    /**
-     * @param string $version
-     * @param string $type
-     * @param PrepareContext $prepareContext
-     * @param PublishContext $publishContext
-     * @param OutputInterface $output
-     * @return int
-     */
     public function __invoke(
         ?string $version,
         ?string $type,

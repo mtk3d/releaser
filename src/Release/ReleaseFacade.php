@@ -11,10 +11,7 @@ use PHLAK\SemVer\Exceptions\InvalidVersionException;
 final class ReleaseFacade
 {
     /**
-     * @param string $type
      * @param GenericList<ChangeDTO> $changes
-     * @param string $previousVersion
-     * @return ReleaseDTO
      * @throws InvalidVersionException
      */
     public function createNextRelease(string $type, GenericList $changes, string $previousVersion): ReleaseDTO

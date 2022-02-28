@@ -10,17 +10,8 @@ use PHLAK\SemVer\Exceptions\InvalidVersionException;
 
 class PrepareContext
 {
-    /**
-     * @var ChangelogFacade
-     */
     private ChangelogFacade $changelogFacade;
-    /**
-     * @var ChangeFacade
-     */
     private ChangeFacade $changeFacade;
-    /**
-     * @var ReleaseFacade
-     */
     private ReleaseFacade $releaseFacade;
 
     public function __construct(
@@ -34,9 +25,6 @@ class PrepareContext
     }
 
     /**
-     * @param string|null $type
-     * @param string|null $version
-     * @return ReleaseDTO
      * @throws InvalidVersionException
      */
     public function prepareRelease(?string $type, ?string $version): ReleaseDTO

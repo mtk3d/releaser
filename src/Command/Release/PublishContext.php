@@ -9,17 +9,8 @@ use MTK\Releaser\Publisher\PublisherFacade;
 
 class PublishContext
 {
-    /**
-     * @var ChangelogFacade
-     */
     private ChangelogFacade $changelogFacade;
-    /**
-     * @var GitFacade
-     */
     private GitFacade $gitFacade;
-    /**
-     * @var PublisherFacade
-     */
     private PublisherFacade $publisherFacade;
 
     public function __construct(
@@ -32,9 +23,6 @@ class PublishContext
         $this->publisherFacade = $publisherFacade;
     }
 
-    /**
-     * @param ReleaseDTO $release
-     */
     public function publish(ReleaseDTO $release): void
     {
         $this->changelogFacade->appendRelease($release);
@@ -42,9 +30,6 @@ class PublishContext
         $this->publisherFacade->publish($release);
     }
 
-    /**
-     * @return bool
-     */
     public function hasUncommittedChanges(): bool
     {
         return $this->gitFacade->hasUncommittedChanges();

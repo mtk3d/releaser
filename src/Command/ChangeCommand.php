@@ -9,15 +9,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ChangeCommand extends Command
 {
-    /**
-     * @param string $type
-     * @param string $message
-     * @param string|null $changeId
-     * @param string|null $author
-     * @param ChangeFacade $changeFacade
-     * @param OutputInterface $output
-     * @return int
-     */
     public function __invoke(
         string $type,
         string $message,

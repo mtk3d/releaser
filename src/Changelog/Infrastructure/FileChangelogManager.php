@@ -13,13 +13,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class FileChangelogManager implements ChangelogManager
 {
-    /**
-     * @var Filesystem
-     */
     private Filesystem $filesystem;
-    /**
-     * @var string
-     */
     private string $path;
 
     public function __construct(AppConfig $config, Filesystem $filesystem)
@@ -31,9 +25,6 @@ class FileChangelogManager implements ChangelogManager
         }
     }
 
-    /**
-     * @inheritDoc
-     */
     public function save(Changelog $changelog): void
     {
         $content = $changelog->getListReleaseDTO()
@@ -46,9 +37,6 @@ class FileChangelogManager implements ChangelogManager
         $this->filesystem->dumpFile($this->path, $content);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getChangelog(): Changelog
     {
         $content = $this->getFileContent($this->path);
@@ -68,7 +56,6 @@ class FileChangelogManager implements ChangelogManager
     }
 
     /**
-     * @param string $content
      * @return GenericList<string>
      */
     private function splitContent(string $content): GenericList
@@ -79,10 +66,6 @@ class FileChangelogManager implements ChangelogManager
         return GenericList::ofAll(explode("\n## ", $content));
     }
 
-    /**
-     * @param string $releaseContent
-     * @return ReleaseDTO
-     */
     private function parseRelease(string $releaseContent): ReleaseDTO
     {
         $lines = GenericList::ofAll(explode("\n", $releaseContent));

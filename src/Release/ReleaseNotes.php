@@ -24,17 +24,11 @@ class ReleaseNotes
         $this->changes = $changes;
     }
 
-    /**
-     * @return ReleaseNotes
-     */
     public static function empty(): ReleaseNotes
     {
         return new ReleaseNotes(Map::empty());
     }
 
-    /**
-     * @param ChangeDTO $change
-     */
     public function put(ChangeDTO $change): void
     {
         /** @var GenericList<ChangeDTO> $typeChanges */
@@ -48,9 +42,6 @@ class ReleaseNotes
         );
     }
 
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
         return ReleaseNotesFormatter::getInstance()->format($this->changes);

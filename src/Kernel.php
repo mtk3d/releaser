@@ -2,6 +2,7 @@
 
 namespace MTK\Releaser;
 
+use DI\Container;
 use DI\ContainerBuilder;
 use MTK\Releaser\Change\ChangeConfiguration;
 use MTK\Releaser\Change\ChangeFacade;
@@ -32,7 +33,7 @@ class Kernel extends Application
 {
     public const CONFIG_FILE = 'releaser.yaml';
 
-    protected function createContainer()
+    protected function createContainer(): Container
     {
         $builder = new ContainerBuilder();
 

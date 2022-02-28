@@ -12,13 +12,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class FileChangeManager implements ChangeManager
 {
-    /**
-     * @var Filesystem
-     */
     private Filesystem $filesystem;
-    /**
-     * @var string
-     */
     private string $path;
 
     public function __construct(AppConfig $config, Filesystem $filesystem)
@@ -30,9 +24,6 @@ class FileChangeManager implements ChangeManager
         }
     }
 
-    /**
-     * @inheritDoc
-     */
     public function save(Change $change): void
     {
         $author = $change->getChangeDTO()->getAuthor();
@@ -41,9 +32,6 @@ class FileChangeManager implements ChangeManager
         $this->filesystem->dumpFile($filePath, serialize($change));
     }
 
-    /**
-     * @inheritDoc
-     */
     public function get(): GenericList
     {
         return $this->getListOfFiles()
@@ -51,9 +39,6 @@ class FileChangeManager implements ChangeManager
             ->map(fn (string $fileContent): Change => unserialize($fileContent));
     }
 
-    /**
-     * @inheritDoc
-     */
     public function clearAll(): void
     {
         $this->getListOfFiles()
@@ -74,19 +59,11 @@ class FileChangeManager implements ChangeManager
             ->filter(fn (string $fileName): bool => !in_array($fileName, ['.', '..']));
     }
 
-    /**
-     * @param string $fileName
-     * @return string
-     */
     private function getFilePath(string $fileName): string
     {
         return join("/", [$this->path, $fileName]);
     }
 
-    /**
-     * @param string $author
-     * @return string
-     */
     private function getFileName(string $author): string
     {
         return Option::of(/** @param string */$author)
@@ -97,28 +74,17 @@ class FileChangeManager implements ChangeManager
             ->getOrElse('');
     }
 
-    /**
-     * @param string $fileName
-     * @return string
-     */
     private function getFileContent(string $fileName): string
     {
         $content = file_get_contents($this->getFilePath($fileName));
         return $content ?: "";
     }
 
-    /**
-     * @param string $fileName
-     */
     private function removeFile(string $fileName): void
     {
         $this->filesystem->remove($this->getFilePath($fileName));
     }
 
-    /**
-     * @param string $author
-     * @return string
-     */
     private function getFilePathByAuthor(string $author): string
     {
         return $this->getFilePath($this->getFileName($author));

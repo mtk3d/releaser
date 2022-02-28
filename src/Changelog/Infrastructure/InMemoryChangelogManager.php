@@ -7,9 +7,6 @@ use MTK\Releaser\Changelog\ChangelogManager;
 
 class InMemoryChangelogManager implements ChangelogManager
 {
-    /**
-     * @var Changelog
-     */
     private Changelog $changelog;
 
     public function __construct()
@@ -17,17 +14,11 @@ class InMemoryChangelogManager implements ChangelogManager
         $this->changelog = Changelog::empty();
     }
 
-    /**
-     * @inheritDoc
-     */
     public function save(Changelog $changelog): void
     {
         $this->changelog = $changelog;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getChangelog(): Changelog
     {
         return $this->changelog;

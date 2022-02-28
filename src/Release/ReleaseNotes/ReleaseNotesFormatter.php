@@ -26,12 +26,11 @@ class ReleaseNotesFormatter
 
     /**
      * @param Map<string, GenericList<ChangeDTO>> $changes
-     * @return string
      */
     public function format(Map $changes): string
     {
         /** @var Map<string, string> $changesTypes */
-        $changesTypes = $changes->map( /** @phpstan-ignore-line */
+        $changesTypes = $changes->map(
             function (Tuple $keyValue): Tuple {
                 /**
                  * @var string $key

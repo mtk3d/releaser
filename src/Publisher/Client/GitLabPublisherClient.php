@@ -1,25 +1,16 @@
 <?php
 
-namespace MTK\Releaser\Release\Publisher\Client;
+namespace MTK\Releaser\Publisher\Client;
 
 use GuzzleHttp;
-use MTK\Releaser\Common\ReleaseDTO;
 use MTK\Releaser\Publisher\PublisherClient;
 use Webmozart\Assert\Assert;
+use MTK\Releaser\Shared\ReleaseDTO;
 
 class GitLabPublisherClient implements PublisherClient
 {
-    /**
-     * @var string
-     */
     private string $projectId;
-    /**
-     * @var string
-     */
     private string $privateToken;
-    /**
-     * @var GuzzleHttp\Client
-     */
     private GuzzleHttp\Client $client;
 
     /**
@@ -37,9 +28,6 @@ class GitLabPublisherClient implements PublisherClient
         $this->client = new GuzzleHttp\Client(['base_uri' => $config['gitlabUrl']]);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function publish(ReleaseDTO $release): void
     {
         $this->client->request(

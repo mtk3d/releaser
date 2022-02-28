@@ -18,25 +18,16 @@ class InMemoryChangeManager implements ChangeManager
         $this->changes = GenericList::empty();
     }
 
-    /**
-     * @inheritDoc
-     */
     public function save(Change $change): void
     {
         $this->changes = $this->changes->append($change);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function get(): GenericList
     {
         return $this->changes;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function clearAll(): void
     {
         $this->changes = GenericList::empty();
