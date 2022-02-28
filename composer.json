@@ -33,12 +33,12 @@
         "composer/xdebug-handler": "^2.0"
     },
     "autoload": {
-        "psr-4": {
-            "MTK\\Releaser\\": "src/",
-            "MTK\\Releaser\\Tests\\": "tests/"
-        },
+        "psr-4": { "MTK\\Releaser\\": "src/" },
+        "files": [ "config/services.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": { "MTK\\Releaser\\Tests\\": "tests/" },
         "files": [
-            "config/services.php",
             "config/dev_services.php",
             "tests/Fixture/ChangeFixture.php",
             "tests/Fixture/ReleaseFixture.php"
