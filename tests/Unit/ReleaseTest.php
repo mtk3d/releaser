@@ -39,7 +39,7 @@ class ReleaseTest extends TestCase
 
             EOL;
 
-        $this->assertEquals(new ReleaseDTO("2.0.0", $releaseNotes), $release);
+        $this->assertEquals(aRelease("2.0.0", $releaseNotes), $release);
     }
 
     public function releaseWithoutChanges(): void
@@ -48,6 +48,6 @@ class ReleaseTest extends TestCase
         $release = $this->releaseFacade
             ->createNextRelease("major", $changes, "1.0.0");
 
-        $this->assertEquals(new ReleaseDTO("2.0.0", ""), $release);
+        $this->assertEquals(aRelease("2.0.0", ""), $release);
     }
 }
