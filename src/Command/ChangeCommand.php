@@ -26,7 +26,7 @@ class ChangeCommand extends Command
 
         $changeFacade->create(new ChangeDTO($type, $message, $author, $changeId));
 
-        $output->writeln("Unreleased changes:");
+        $output->writeln("Changes to release:");
         $changeFacade->getAllChanges()->forEach(function (ChangeDTO $change) use ($output): void {
             $output->write((string)$change);
         });

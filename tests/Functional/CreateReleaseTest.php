@@ -43,7 +43,7 @@ class CreateReleaseTest extends BaseTestCase
         (new ReleaseCommand())(null, "minor", $this->prepareContext, $this->publishContext, $releaseOutput);
 
         $changeExpected = <<<EOF
-            Unreleased changes:
+            Changes to release:
             ---
             Type:     fix
             Message:  Fix article validation
@@ -80,6 +80,6 @@ class CreateReleaseTest extends BaseTestCase
     {
         parent::tearDown();
         $this->changeFacade->clearChanges();
-        $this->filesystem->dumpFile($this->config->get('changelogName'), "");
+        $this->filesystem->dumpFile($this->config->get('changelogName'), '');
     }
 }
