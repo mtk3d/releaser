@@ -10,9 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class ChangelogTest extends TestCase
 {
-    /**
-     * @var ChangelogFacade
-     */
     private ChangelogFacade $changelogFacade;
 
     public function setUp(): void

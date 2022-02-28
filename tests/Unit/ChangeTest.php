@@ -10,9 +10,6 @@ use function MTK\Releaser\Tests\Fixtures\aFixChange;
 
 class ChangeTest extends TestCase
 {
-    /**
-     * @var ChangeFacade
-     */
     private ChangeFacade $changeFacade;
 
     public function setUp(): void

@@ -12,9 +12,6 @@ use function MTK\Releaser\Tests\Fixtures\aFeatureChange;
 
 class ReleaseTest extends TestCase
 {
-    /**
-     * @var ReleaseFacade
-     */
     private ReleaseFacade $releaseFacade;
 
     public function setUp(): void
