@@ -31,16 +31,19 @@ class ReleaseTest extends TestCase
         $release = $this->releaseFacade
             ->createNextRelease("major", $changes, "1.0.0");
 
-        $releaseNotes = <<<EOL
+        $expectedRelease = aRelease(
+            "2.0.0",
+            <<<EOL
             ### Feature (1)
             - Add article draft functionality ID-123
             ### Fix (2)
             - Fix article validation ID-456
             - Fix category tree building ID-789
 
-            EOL;
+            EOL
+        );
 
-        $this->assertEquals(aRelease("2.0.0", $releaseNotes), $release);
+        $this->assertEquals($expectedRelease, $release);
     }
 
     public function releaseWithoutChanges(): void
