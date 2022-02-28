@@ -5,7 +5,6 @@ namespace MTK\Releaser\Tests\Unit;
 
 use MTK\Releaser\Changelog\ChangelogConfiguration;
 use MTK\Releaser\Changelog\ChangelogFacade;
-use MTK\Releaser\Shared\ReleaseDTO;
 use PHPUnit\Framework\TestCase;
 
 class ChangelogTest extends TestCase
@@ -20,12 +19,9 @@ class ChangelogTest extends TestCase
 
     public function testAppendNewRelease(): void
     {
-        $releaseNotes = <<<EOL
-            ### Fix (1)
-            - Fix article validation
-            EOL;
+        $this->changelogFacade->appendRelease(aRelease());
 
-        $release = new ReleaseDTO("1.0.0", $releaseNotes);
+        $release = aRelease("2.0.0");
         $this->changelogFacade->appendRelease($release);
 
         $latestRelease = $this->changelogFacade->getLatestRelease()->get();

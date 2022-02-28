@@ -37,7 +37,10 @@
             "MTK\\Releaser\\": "src/",
             "MTK\\Releaser\\Tests\\": "tests/"
         },
-        "files": ["tests/Fixtures/ChangeFixtures.php"]
+        "files": [
+            "tests/Fixtures/ChangeFixtures.php",
+            "tests/Fixtures/ReleaseFixture.php"
+        ]
     },
     "config": {
         "allow-plugins": {
