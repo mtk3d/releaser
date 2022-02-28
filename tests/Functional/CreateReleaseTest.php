@@ -24,10 +24,7 @@ class CreateReleaseTestCase extends BaseTestCase
 
     public function setUp(): void
     {
-        if (!file_exists('test-env')) {
-            mkdir('test-env', 0777, true);
-        }
-        chdir('test-env');
+        parent::setUp();
 
         $this->config = $this->container->get(AppConfig::class);
         $this->filesystem = $this->container->get(Filesystem::class);
@@ -77,6 +74,7 @@ class CreateReleaseTestCase extends BaseTestCase
 
         $this->assertEquals($changeExpected, self::getDisplay($changeOutput));
         $this->assertEquals($releaseExpected, self::getDisplay($releaseOutput));
+        $this->fail();
     }
 
     public function tearDown(): void
