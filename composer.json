@@ -48,6 +48,11 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "lint": "ecs",
+        "check": [
+            "@lint",
+            "@test"
+        ]
     }
 }
