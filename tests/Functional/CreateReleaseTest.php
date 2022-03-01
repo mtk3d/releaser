@@ -6,7 +6,7 @@ namespace MTK\Releaser\Tests\Functional;
 
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Shared\AppConfig;
-use MTK\Releaser\Shared\Common\OutputTestUtils;
+use MTK\Releaser\Tests\Common\OutputTestUtils;
 use Symfony\Component\Filesystem\Filesystem;
 
 class CreateReleaseTest extends BaseTestCase
