@@ -11,15 +11,16 @@ use PHPUnit\Framework\TestCase;
 
 class BaseTestCase extends TestCase
 {
+    protected const TEST_DIR = 'test-env';
     protected Container $container;
     protected Kernel $app;
 
     public function setUp(): void
     {
-        if (!file_exists('test-env')) {
-            mkdir('test-env', 0777, true);
+        if (!file_exists(self::TEST_DIR)) {
+            mkdir(self::TEST_DIR, 0777, true);
         }
-        chdir('test-env');
+        chdir(self::TEST_DIR);
 
         $builder = new ContainerBuilder();
         $builder->addDefinitions(services());
