@@ -33,7 +33,7 @@ class CreateReleaseTest extends BaseTestCase
             $fixChangeOutput
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             <<<EOF
             Changes to release:
             ---
@@ -57,7 +57,7 @@ class CreateReleaseTest extends BaseTestCase
             $featureChangeOutput
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             <<<EOF
             Changes to release:
             ---
@@ -86,7 +86,7 @@ class CreateReleaseTest extends BaseTestCase
             $releaseOutput
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             <<<EOF
             Release details:
             Version: 0.1.0
@@ -121,7 +121,7 @@ class CreateReleaseTest extends BaseTestCase
             $releaseOutput
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             "Version format error\n",
             self::getDisplay($releaseOutput)
         );

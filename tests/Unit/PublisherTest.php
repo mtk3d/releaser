@@ -24,12 +24,12 @@ class PublisherTest extends TestCase
     {
         $release = aRelease();
 
-        $publisher = $this->createMock(PublisherClient::class);
-        $publisher->expects($this->exactly(2))
+        $publisher = self::createMock(PublisherClient::class);
+        $publisher->expects(self::exactly(2))
             ->method('publish')
             ->with($release);
 
-        $clientFactory = $this->createMock(ClientFactory::class);
+        $clientFactory = self::createMock(ClientFactory::class);
         $clientFactory->method('getPublishers')
             ->willReturn(GenericList::of($publisher, $publisher));
 

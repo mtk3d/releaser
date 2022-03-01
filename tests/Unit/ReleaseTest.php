@@ -43,7 +43,7 @@ class ReleaseTest extends TestCase
             EOL
         );
 
-        $this->assertEquals($expectedRelease, $release);
+        self::assertEquals($expectedRelease, $release);
     }
 
     public function releaseWithoutChanges(): void
@@ -52,6 +52,6 @@ class ReleaseTest extends TestCase
         $release = $this->releaseFacade
             ->createNextRelease("major", $changes, "1.0.0");
 
-        $this->assertEquals(aRelease("2.0.0", ""), $release);
+        self::assertEquals(aRelease("2.0.0", ""), $release);
     }
 }

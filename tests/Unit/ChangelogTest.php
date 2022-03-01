@@ -28,7 +28,7 @@ class ChangelogTest extends TestCase
 
         $latestRelease = $this->changelogFacade->getLatestRelease()->get();
 
-        $this->assertEquals($release, $latestRelease);
+        self::assertEquals($release, $latestRelease);
     }
 
     public function testGetLatestReleaseFromEmptyChangelog(): void
@@ -37,6 +37,6 @@ class ChangelogTest extends TestCase
             ->getLatestRelease()
             ->isEmpty();
 
-        $this->assertTrue($releaseNotExist);
+        self::assertTrue($releaseNotExist);
     }
 }

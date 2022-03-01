@@ -25,7 +25,7 @@ class ChangeTest extends TestCase
         $change = aFixChange();
         $this->changeFacade->create($change);
 
-        $this->assertEquals($change, $this->changeFacade->getAllChanges()->head());
+        self::assertEquals($change, $this->changeFacade->getAllChanges()->head());
     }
 
     public function testClearChanges(): void
@@ -35,6 +35,6 @@ class ChangeTest extends TestCase
 
         $this->changeFacade->clearChanges();
 
-        $this->assertTrue($this->changeFacade->getAllChanges()->isEmpty());
+        self::assertTrue($this->changeFacade->getAllChanges()->isEmpty());
     }
 }
