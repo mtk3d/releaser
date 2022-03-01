@@ -11,12 +11,20 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ChangeCommand extends Command
 {
+    private ChangeFacade $changeFacade;
+
+    public function __construct(
+        ChangeFacade $changeFacade
+    ) {
+        parent::__construct('change');
+        $this->changeFacade = $changeFacade;
+    }
+
     public function __invoke(
         string $type,
         string $message,
         ?string $changeId,
         ?string $author,
-        ChangeFacade $changeFacade,
         OutputInterface $output
     ): int {
         $changeId = $changeId ?: "";
@@ -26,10 +34,10 @@ class ChangeCommand extends Command
             $author = "John Doe";
         }
 
-        $changeFacade->create(new ChangeDTO($type, $message, $author, $changeId));
+        $this->changeFacade->create(new ChangeDTO($type, $message, $author, $changeId));
 
         $output->writeln("Changes to release:");
-        $changeFacade->getAllChanges()->forEach(function (ChangeDTO $change) use ($output): void {
+        $this->changeFacade->getAllChanges()->forEach(function (ChangeDTO $change) use ($output): void {
             $output->write((string)$change);
         });
         $output->write("", true);

@@ -12,32 +12,40 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ReleaseCommand extends Command
 {
+    private PrepareContext $prepareContext;
+    private PublishContext $publishContext;
+
+    public function __construct(PrepareContext $prepareContext, PublishContext $publishContext)
+    {
+        parent::__construct('release');
+        $this->prepareContext = $prepareContext;
+        $this->publishContext = $publishContext;
+    }
+
     public function __invoke(
-        ?string $version,
+        ?string $ver,
         ?string $type,
-        PrepareContext $prepareContext,
-        PublishContext $publishContext,
         OutputInterface $output
     ): int {
-        if ($publishContext->hasUncommittedChanges()) {
+        if ($this->publishContext->hasUncommittedChanges()) {
             $output->write("You have uncommitted changes in your repository", true);
             return 1;
         }
 
         try {
-            $release = $prepareContext->prepareRelease($type, $version);
+            $release = $this->prepareContext->prepareRelease($type, $ver);
         } catch (InvalidVersionException $e) {
             $output->write("Version format error", true);
             return 1;
         }
 
-        $publishContext->publish($release);
+        $this->publishContext->publish($release);
 
         $output->write("Release details:", true);
         $output->write((string)$release);
         $output->write("Release created successfully", true);
 
-        $prepareContext->clearChanges();
+        $this->prepareContext->clearChanges();
 
         return 0;
     }

@@ -6,6 +6,8 @@ namespace MTK\Releaser\Tests\Functional;
 
 use DI\Container;
 use DI\ContainerBuilder;
+use MTK\Releaser\Command\ChangeCommand;
+use MTK\Releaser\Command\ReleaseCommand;
 use MTK\Releaser\Kernel;
 use PHPUnit\Framework\TestCase;
 
@@ -28,5 +30,24 @@ class BaseTestCase extends TestCase
         $this->container = $builder->build();
 
         $this->app = new Kernel("Releaser", "0.1.0", $this->container);
+
+        $this->app->command('new [type] [message] [changeId] [author]', ChangeCommand::class)
+            ->descriptions(
+                'Create new changelog entry',
+                [
+                    'type' => 'Type of entry [fix|feature|deprecation|security|performance|other]',
+                    'message' => 'Information what was changed',
+                    'changeId' => 'Identity of change in your workflow (ex. canban ticket ID)'
+                ]
+            );
+
+        $this->app->command('release [--ver=] [type]', ReleaseCommand::class)
+            ->descriptions(
+                'Create and publish new release',
+                [
+                    'type' => 'Type of release [patch|major|minor|rc]',
+                    '--ver' => 'Version of next release (optional)',
+                ]
+            );
     }
 }

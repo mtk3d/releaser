@@ -10,6 +10,7 @@ use MTK\Releaser\Changelog\ChangelogConfiguration;
 use MTK\Releaser\Changelog\ChangelogFacade;
 use MTK\Releaser\Changelog\ChangelogManager;
 use MTK\Releaser\Changelog\Infrastructure\FileChangelogManager;
+use MTK\Releaser\Command\ChangeCommand;
 use MTK\Releaser\Git\Client\GitCliClient;
 use MTK\Releaser\Git\GitClient;
 use MTK\Releaser\Git\GitConfiguration;
@@ -43,5 +44,7 @@ function services(string $configFile = 'releaser.yaml'): array
         ClientFactory::class => autowire(ClientFactory::class),
         GitClient::class => autowire(GitCliClient::class),
         Filesystem::class => autowire(Filesystem::class),
+        // Commands
+        ChangeCommand::class => autowire(ChangeCommand::class),
     ];
 }

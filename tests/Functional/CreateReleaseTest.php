@@ -5,48 +5,31 @@ declare(strict_types=1);
 namespace MTK\Releaser\Tests\Functional;
 
 use MTK\Releaser\Change\ChangeFacade;
-use MTK\Releaser\Command\Release\PrepareContext;
-use MTK\Releaser\Command\Release\PublishContext;
 use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Shared\Common\OutputTestUtils;
-use function MTK\Releaser\Tests\Fixture\runFeatureChangeCommand;
-use function MTK\Releaser\Tests\Fixture\runFixChangeCommand;
-use function MTK\Releaser\Tests\Fixture\runReleaseMinorCommand;
 use Symfony\Component\Filesystem\Filesystem;
-use function MTK\Releaser\Tests\Fixture\runReleaseVersionCommand;
 
 class CreateReleaseTest extends BaseTestCase
 {
     use OutputTestUtils;
 
-    private ChangeFacade $changeFacade;
     private AppConfig $config;
-    private PrepareContext $prepareContext;
-    private PublishContext $publishContext;
 
     public function setUp(): void
     {
         parent::setUp();
 
         $this->config = $this->container->get(AppConfig::class);
-        $this->changeFacade = $this->container->get(ChangeFacade::class);
-        $this->prepareContext = $this->container->get(PrepareContext::class);
-        $this->publishContext = $this->container->get(PublishContext::class);
     }
 
     public function testCreateRelease(): void
     {
+        /* 01 ADD FIX CHANGE */
+
         $fixChangeOutput = self::getStreamOutput();
-        $featureChangeOutput = self::getStreamOutput();
-        $releaseOutput = self::getStreamOutput();
 
-        /* 01 FIX CHANGE */
-
-        runFixChangeCommand(
-            "Fix article validation",
-            "ID-123",
-            "Foo Bar",
-            $this->changeFacade,
+        $this->app->runCommand(
+            'new fix "Fix article validation" ID-123 "Foo Bar"',
             $fixChangeOutput
         );
 
@@ -65,13 +48,12 @@ class CreateReleaseTest extends BaseTestCase
             self::getDisplay($fixChangeOutput)
         );
 
-        /* 02 FEATURE CHANGE */
+        /* 02 ADD FEATURE CHANGE */
 
-        runFeatureChangeCommand(
-            "Add article draft functionality",
-            "ID-456",
-            "John Doe",
-            $this->changeFacade,
+        $featureChangeOutput = self::getStreamOutput();
+
+        $this->app->runCommand(
+            'new feature "Add article draft functionality" ID-456 "John Doe"',
             $featureChangeOutput
         );
 
@@ -97,9 +79,10 @@ class CreateReleaseTest extends BaseTestCase
 
         /* 03 RELEASE CHANGES */
 
-        runReleaseMinorCommand(
-            $this->prepareContext,
-            $this->publishContext,
+        $releaseOutput = self::getStreamOutput();
+
+        $this->app->runCommand(
+            'release minor',
             $releaseOutput
         );
 
@@ -122,25 +105,20 @@ class CreateReleaseTest extends BaseTestCase
 
     public function testWrongVersion(): void
     {
-        $releaseOutput = self::getStreamOutput();
+        /* 01 ADD FIX CHANGE */
 
-        /* 01 FIX CHANGE */
-
-        runFixChangeCommand(
-            "Fix article validation",
-            "ID-123",
-            "Foo Bar",
-            $this->changeFacade,
+        $this->app->runCommand(
+            'new fix "Fix article validation" ID-123 "Foo Bar"',
             self::getStreamOutput()
         );
 
         /* 02 RELEASE CHANGES WITH WRONG VERSION */
 
-        runReleaseVersionCommand(
-            $this->prepareContext,
-            $this->publishContext,
-            $releaseOutput,
-            '10-01-2022'
+        $releaseOutput = self::getStreamOutput();
+
+        $this->app->runCommand(
+            'release --ver=10-01-2022',
+            $releaseOutput
         );
 
         $this->assertEquals(
@@ -151,8 +129,9 @@ class CreateReleaseTest extends BaseTestCase
 
     public function tearDown(): void
     {
-        parent::tearDown();
-        $this->changeFacade->clearChanges();
+        $changeFacade = $this->container->get(ChangeFacade::class);
+        $changeFacade->clearChanges();
+
         $filesystem = $this->container->get(Filesystem::class);
         $filesystem->dumpFile($this->config->get('changelogName'), '');
     }
