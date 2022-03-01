@@ -114,4 +114,35 @@ class CreateReleaseTest extends BaseTestCase
             self::getDisplay($releaseOutput)
         );
     }
+
+    public function testNextVersionRelease(): void
+    {
+        /* 01 RELEASE MINOR CHANGES */
+
+        $this->app->runCommand(
+            'release minor',
+            self::getStreamOutput()
+        );
+
+        /* 02 RELEASE MAJOR CHANGES */
+
+        $releaseOutput = self::getStreamOutput();
+
+        $this->app->runCommand(
+            'release major',
+            $releaseOutput
+        );
+
+        self::assertEquals(
+            <<<EOF
+            Release details:
+            Version: 1.0.0
+            Release notes:
+            
+            Release created successfully
+
+            EOF,
+            self::getDisplay($releaseOutput)
+        );
+    }
 }

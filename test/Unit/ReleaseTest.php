@@ -47,7 +47,7 @@ class ReleaseTest extends TestCase
         self::assertEquals($expectedRelease, $release);
     }
 
-    public function releaseWithoutChanges(): void
+    public function testReleaseWithoutChanges(): void
     {
         $changes = GenericList::empty();
         $release = $this->releaseFacade
