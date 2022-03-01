@@ -4,23 +4,11 @@ declare(strict_types=1);
 
 namespace MTK\Releaser\Test\Functional;
 
-use MTK\Releaser\Change\ChangeFacade;
-use MTK\Releaser\Shared\AppConfig;
 use MTK\Releaser\Test\Common\OutputTestUtils;
-use Symfony\Component\Filesystem\Filesystem;
 
 class CreateReleaseTest extends BaseTestCase
 {
     use OutputTestUtils;
-
-    private AppConfig $config;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-
-        $this->config = $this->container->get(AppConfig::class);
-    }
 
     public function testCreateRelease(): void
     {
@@ -125,14 +113,5 @@ class CreateReleaseTest extends BaseTestCase
             "Version format error\n",
             self::getDisplay($releaseOutput)
         );
-    }
-
-    public function tearDown(): void
-    {
-        $changeFacade = $this->container->get(ChangeFacade::class);
-        $changeFacade->clearChanges();
-
-        $filesystem = $this->container->get(Filesystem::class);
-        $filesystem->dumpFile($this->config->get('changelogName'), '');
     }
 }
