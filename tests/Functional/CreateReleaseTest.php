@@ -13,6 +13,7 @@ use function MTK\Releaser\Tests\Fixture\runFeatureChangeCommand;
 use function MTK\Releaser\Tests\Fixture\runFixChangeCommand;
 use function MTK\Releaser\Tests\Fixture\runReleaseMinorCommand;
 use Symfony\Component\Filesystem\Filesystem;
+use function MTK\Releaser\Tests\Fixture\runReleaseVersionCommand;
 
 class CreateReleaseTest extends BaseTestCase
 {
@@ -20,6 +21,8 @@ class CreateReleaseTest extends BaseTestCase
 
     private ChangeFacade $changeFacade;
     private AppConfig $config;
+    private PrepareContext $prepareContext;
+    private PublishContext $publishContext;
 
     public function setUp(): void
     {
@@ -27,12 +30,12 @@ class CreateReleaseTest extends BaseTestCase
 
         $this->config = $this->container->get(AppConfig::class);
         $this->changeFacade = $this->container->get(ChangeFacade::class);
+        $this->prepareContext = $this->container->get(PrepareContext::class);
+        $this->publishContext = $this->container->get(PublishContext::class);
     }
 
     public function testCreateRelease(): void
     {
-        $prepareContext = $this->container->get(PrepareContext::class);
-        $publishContext = $this->container->get(PublishContext::class);
         $fixChangeOutput = self::getStreamOutput();
         $featureChangeOutput = self::getStreamOutput();
         $releaseOutput = self::getStreamOutput();
@@ -95,8 +98,8 @@ class CreateReleaseTest extends BaseTestCase
         /* 03 RELEASE CHANGES */
 
         runReleaseMinorCommand(
-            $prepareContext,
-            $publishContext,
+            $this->prepareContext,
+            $this->publishContext,
             $releaseOutput
         );
 
@@ -113,6 +116,35 @@ class CreateReleaseTest extends BaseTestCase
             Release created successfully
 
             EOF,
+            self::getDisplay($releaseOutput)
+        );
+    }
+
+    public function testWrongVersion(): void
+    {
+        $releaseOutput = self::getStreamOutput();
+
+        /* 01 FIX CHANGE */
+
+        runFixChangeCommand(
+            "Fix article validation",
+            "ID-123",
+            "Foo Bar",
+            $this->changeFacade,
+            self::getStreamOutput()
+        );
+
+        /* 02 RELEASE CHANGES WITH WRONG VERSION */
+
+        runReleaseVersionCommand(
+            $this->prepareContext,
+            $this->publishContext,
+            $releaseOutput,
+            '10-01-2022'
+        );
+
+        $this->assertEquals(
+            "Version format error\n",
             self::getDisplay($releaseOutput)
         );
     }

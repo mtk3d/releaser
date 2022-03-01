@@ -41,3 +41,13 @@ function runReleaseMinorCommand(
     $releaseCommand = new ReleaseCommand();
     $releaseCommand(null, "minor", $prepareContext, $publishContext, $output);
 }
+
+function runReleaseVersionCommand(
+    PrepareContext $prepareContext,
+    PublishContext $publishContext,
+    OutputInterface $output,
+    string $version = '1.0.0'
+): void {
+    $releaseCommand = new ReleaseCommand();
+    $releaseCommand($version, "minor", $prepareContext, $publishContext, $output);
+}
