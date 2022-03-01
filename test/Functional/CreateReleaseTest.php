@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MTK\Releaser\Tests\Functional;
+namespace MTK\Releaser\Test\Functional;
 
 use MTK\Releaser\Change\ChangeFacade;
 use MTK\Releaser\Shared\AppConfig;
-use MTK\Releaser\Tests\Common\OutputTestUtils;
+use MTK\Releaser\Test\Common\OutputTestUtils;
 use Symfony\Component\Filesystem\Filesystem;
 
 class CreateReleaseTest extends BaseTestCase

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace MTK\Releaser\Test\Fixture;
+
 use MTK\Releaser\Shared\ReleaseDTO;
 
 function aRelease(string $version = "1.0.0", string $releaseNotes = null): ReleaseDTO

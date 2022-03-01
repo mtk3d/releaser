@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MTK\Releaser\Tests\Common;
+namespace MTK\Releaser\Test\Common;
 
 use Symfony\Component\Console\Output\StreamOutput;
 

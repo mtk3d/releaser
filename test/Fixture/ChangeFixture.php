@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MTK\Releaser\Tests\Fixture;
+namespace MTK\Releaser\Test\Fixture;
 
 use MTK\Releaser\Shared\ChangeDTO;
 

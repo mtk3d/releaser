@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MTK\Releaser\Tests\Functional;
+namespace MTK\Releaser\Test\Functional;
 
 use DI\Container;
 use DI\ContainerBuilder;

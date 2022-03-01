@@ -37,11 +37,11 @@
         "files": [ "config/services.php" ]
     },
     "autoload-dev": {
-        "psr-4": { "MTK\\Releaser\\Tests\\": "tests/" },
+        "psr-4": { "MTK\\Releaser\\Test\\": "test/" },
         "files": [
             "config/dev_services.php",
-            "tests/Fixture/ChangeFixture.php",
-            "tests/Fixture/ReleaseFixture.php"
+            "test/Fixture/ChangeFixture.php",
+            "test/Fixture/ReleaseFixture.php"
         ]
     },
     "config": {
@@ -51,8 +51,8 @@
     },
     "scripts": {
         "test": "phpunit",
-        "sniffer": "ecs check src tests",
-        "phpstan": "phpstan analyse src tests",
+        "sniffer": "ecs check src test",
+        "phpstan": "phpstan analyse src test",
         "lint": [
             "@sniffer",
             "@phpstan"

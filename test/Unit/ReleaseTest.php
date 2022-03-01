@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MTK\Releaser\Tests\Unit;
+namespace MTK\Releaser\Test\Unit;
 
 use MTK\Releaser\Release\ReleaseConfiguration;
 use MTK\Releaser\Release\ReleaseFacade;
-use function MTK\Releaser\Tests\Fixture\aFeatureChange;
-use function MTK\Releaser\Tests\Fixture\aFixChange;
+use function MTK\Releaser\Test\Fixture\aFeatureChange;
+use function MTK\Releaser\Test\Fixture\aFixChange;
+use function MTK\Releaser\Test\Fixture\aRelease;
 use Munus\Collection\GenericList;
 use PHPUnit\Framework\TestCase;
 
