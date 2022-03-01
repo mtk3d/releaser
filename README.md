@@ -72,10 +72,10 @@ publishers:
 ```
 
 ## TODO
-- [ ] Replace Noodlehaus\Config package
-- [ ] Add more publishers, and test custom publisher
 - [x] Refactor functional test for DI container usage
-- [ ] Write better docs
-- [ ] Add wizard to create change
+- [ ] Replace Noodlehaus\Config package
 - [ ] Fix git changes checking
+- [ ] Add wizard to create change
+- [ ] Write better docs
+- [ ] Add more publishers, and test custom publisher
 - [ ] Setup deptrac
