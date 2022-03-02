@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MTK\Releaser\Command;
 
 use MTK\Releaser\Change\ChangeFacade;
+use MTK\Releaser\Command\Change\AuthorProvider;
 use MTK\Releaser\Shared\ChangeDTO;
 use Silly\Command\Command;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,12 +13,15 @@ use Symfony\Component\Console\Output\OutputInterface;
 class ChangeCommand extends Command
 {
     private ChangeFacade $changeFacade;
+    private AuthorProvider $authorProvider;
 
     public function __construct(
-        ChangeFacade $changeFacade
+        ChangeFacade $changeFacade,
+        AuthorProvider $authorProvider
     ) {
         parent::__construct('change');
         $this->changeFacade = $changeFacade;
+        $this->authorProvider = $authorProvider;
     }
 
     public function __invoke(
@@ -30,8 +34,7 @@ class ChangeCommand extends Command
         $changeId = $changeId ?: "";
 
         if ($author === null) {
-            // @TODO Take author from git or config or something else
-            $author = "John Doe";
+            $author = $this->authorProvider->getAuthor();
         }
 
         $this->changeFacade->create(new ChangeDTO($type, $message, $author, $changeId));

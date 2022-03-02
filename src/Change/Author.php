@@ -13,7 +13,6 @@ class Author
 
     public function __construct(string $name)
     {
-        Assert::stringNotEmpty($name, "Author should be not empty string");
         $this->name = $name;
     }
 

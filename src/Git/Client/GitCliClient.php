@@ -45,4 +45,10 @@ class GitCliClient implements GitClient
 
         return false;
     }
+
+    public function getUsername(): string
+    {
+        /* @phpstan-ignore-next-line */
+        return sh::git('git', 'config', 'user.name');
+    }
 }

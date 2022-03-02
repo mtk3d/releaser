@@ -16,4 +16,6 @@ interface GitClient
     public function push(): void;
 
     public function hasUncommittedChanges(): bool;
+
+    public function getUsername(): string;
 }

@@ -18,7 +18,6 @@ class ChangeDTO
     {
         Assert::stringNotEmpty($type, "Type must be not empty in " . __CLASS__);
         Assert::stringNotEmpty($message, "Message must be not empty in " . __CLASS__);
-        Assert::stringNotEmpty($author, "Author must be not empty in " . __CLASS__);
 
         $this->type = $type;
         $this->message = $message;

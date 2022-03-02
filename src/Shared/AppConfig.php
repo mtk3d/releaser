@@ -19,7 +19,8 @@ class AppConfig extends AbstractConfig
             "git" => [
                 "enabled" => true,
                 "push" => true,
-                "commitMessage" => "Update changelog"
+                "commitMessage" => "Update changelog",
+                "useAuthor" => true,
             ],
             "publishers" => []
         ];

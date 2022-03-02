@@ -8,8 +8,15 @@ use function DI\value;
 
 function dev_services(): array
 {
+    $gitConfig = [
+        "enabled" => false,
+        "push" => true,
+        "commitMessage" => "Update changelog",
+        "useAuthor" => true,
+    ];
+
     return [
-        AppConfig::class => value(new AppConfig(["git" => ["enabled" => false]])),
+        AppConfig::class => value(new AppConfig(["git" => $gitConfig])),
         GitClient::class => value(null)
     ];
 }

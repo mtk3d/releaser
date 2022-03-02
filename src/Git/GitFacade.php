@@ -39,4 +39,9 @@ class GitFacade
 
         return $this->git->hasUncommittedChanges();
     }
+
+    public function getUsername(): string
+    {
+        return $this->git->getUsername();
+    }
 }
