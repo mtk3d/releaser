@@ -73,9 +73,7 @@ publishers:
 
 ## TODO
 - [x] Refactor functional test for DI container usage
-- [ ] Replace Noodlehaus\Config package
 - [ ] Fix git changes checking
 - [ ] Add wizard to create change
 - [ ] Write better docs
 - [ ] Add more publishers, and test custom publisher
-- [ ] Setup deptrac
