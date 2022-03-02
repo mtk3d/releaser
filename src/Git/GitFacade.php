@@ -21,7 +21,7 @@ class GitFacade
     public function createRelease(ReleaseDTO $release): void
     {
         if ($this->appConfig->get('git.enabled')) {
-            $this->git->add('.');
+            $this->git->add($this->appConfig->get('changelogName'));
             $this->git->commit($this->appConfig->get('git.commitMessage'));
             $this->git->tag($release->getVersion());
 

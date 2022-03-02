@@ -10,9 +10,9 @@ function dev_services(): array
 {
     $gitConfig = [
         "enabled" => false,
+        "useAuthor" => true,
         "push" => true,
         "commitMessage" => "Update changelog",
-        "useAuthor" => true,
     ];
 
     return [
