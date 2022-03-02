@@ -77,3 +77,4 @@ publishers:
 - [ ] Add wizard to create change
 - [ ] Write better docs
 - [ ] Add more publishers, and test custom publisher
+- [ ] Replace config library (actual cannot replace only a part of nested array defaults, like only single git parameter)
