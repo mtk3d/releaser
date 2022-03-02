@@ -36,6 +36,7 @@ class GitCliClient implements GitClient
 
     public function hasUncommittedChanges(): bool
     {
+        //@TODO probably
         try {
             /* @phpstan-ignore-next-line */
             sh::git('git', 'status', '--porcelain');
