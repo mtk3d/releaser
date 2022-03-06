@@ -23,7 +23,8 @@ class Application
                 [
                     'type' => 'Type of entry [fix|feature|deprecation|security|performance|other]',
                     'message' => 'Information what was changed',
-                    'changeId' => 'Identity of change in your workflow (ex. canban ticket ID)'
+                    'changeId' => 'Identity of change in your workflow (ex. canban ticket ID)',
+                    'author' => 'Change author if different than git user',
                 ]
             );
 
