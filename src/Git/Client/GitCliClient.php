@@ -37,6 +37,7 @@ class GitCliClient implements GitClient
 
     public function getUsername(): string
     {
-        return shell_exec('git config user.name') ?: '';
+        $username = shell_exec('git config user.name') ?: '';
+        return trim($username);
     }
 }
