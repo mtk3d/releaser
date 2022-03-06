@@ -29,11 +29,11 @@ class PrepareContext
     /**
      * @throws InvalidVersionException
      */
-    public function prepareRelease(?string $type, ?string $version): ReleaseDTO
+    public function prepareRelease(?string $type, ?string $startVersion): ReleaseDTO
     {
         $releaseType = $type ?: 'minor';
 
-        $latestVersion = $version ?: $this->changelogFacade->getLatestRelease()
+        $latestVersion = $startVersion ?: $this->changelogFacade->getLatestRelease()
             ->map(fn (ReleaseDTO $release): string => $release->getVersion())
             ->getOrElse('0.0.0');
 
