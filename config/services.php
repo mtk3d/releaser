@@ -27,6 +27,9 @@ use Symfony\Component\Filesystem\Filesystem;
 use function DI\autowire;
 use function DI\factory;
 
+/**
+ * @return array<string, mixed>
+ */
 function services(string $configFile = 'releaser.yaml'): array
 {
     return [
