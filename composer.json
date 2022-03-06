@@ -19,7 +19,6 @@
         "webmozart/assert": "^1.9",
         "symfony/filesystem": "^5.1",
         "guzzlehttp/guzzle": "^7.0",
-        "mrrio/shellwrap": "^0.4.1",
         "hassankhan/config": "^2.1",
         "mnapoli/silly-php-di": "^1.2",
         "symfony/yaml": "^5.2@dev"

@@ -4,48 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf3d1856be01ed61980e6335d591685f",
+    "content-hash": "7e27ef98102a6a3562fca3a933962a70",
     "packages": [
-        {
-            "name": "d11wtq/boris",
-            "version": "v1.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/borisrepl/boris.git",
-                "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/borisrepl/boris/zipball/31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
-                "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pcntl": "*",
-                "ext-posix": "*",
-                "ext-readline": "*",
-                "php": ">=5.3.0"
-            },
-            "bin": [
-                "bin/boris"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Boris": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A tiny, but robust REPL (Read-Evaluate-Print-Loop) for PHP.",
-            "support": {
-                "issues": "https://github.com/borisrepl/boris/issues",
-                "source": "https://github.com/borisrepl/boris/tree/v1.0.10"
-            },
-            "time": "2015-03-01T08:05:19+00:00"
-        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "dev-master",
@@ -531,60 +491,6 @@
                 "source": "https://github.com/mnapoli/silly-php-di/tree/master"
             },
             "time": "2018-04-05T08:53:27+00:00"
-        },
-        {
-            "name": "mrrio/shellwrap",
-            "version": "0.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MrRio/shellwrap.git",
-                "reference": "38b4de35379d3056a1374f5f725c2261fea1e16e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MrRio/shellwrap/zipball/38b4de35379d3056a1374f5f725c2261fea1e16e",
-                "reference": "38b4de35379d3056a1374f5f725c2261fea1e16e",
-                "shasum": ""
-            },
-            "require": {
-                "d11wtq/boris": "1.0.*",
-                "php": ">=5.3.0"
-            },
-            "bin": [
-                "bin/shellwrap"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "MrRio": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Hall",
-                    "email": "james@snapshotmedia.co.uk",
-                    "homepage": "http://twitter.com/MrRio",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Use any command-line tool as a PHP function.",
-            "homepage": "http://github.com/MrRio/shellwrap",
-            "keywords": [
-                "api",
-                "command",
-                "command-line",
-                "exec",
-                "shell"
-            ],
-            "support": {
-                "issues": "https://github.com/MrRio/shellwrap/issues",
-                "source": "https://github.com/MrRio/shellwrap/tree/master"
-            },
-            "time": "2013-12-23T04:05:45+00:00"
         },
         {
             "name": "munusphp/munus",
