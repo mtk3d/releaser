@@ -28,7 +28,7 @@ class BaseTestCase extends TestCase
 
         $builder = new ContainerBuilder();
         $builder->addDefinitions(services());
-        $builder->addDefinitions(dev_services());
+        $builder->addDefinitions(test_services());
         $this->container = $builder->build();
 
         $app = new Application($this->container);

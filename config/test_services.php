@@ -6,7 +6,7 @@ use MTK\Releaser\Git\GitClient;
 use MTK\Releaser\Shared\AppConfig;
 use function DI\value;
 
-function dev_services(): array
+function test_services(): array
 {
     $gitConfig = [
         "enabled" => false,

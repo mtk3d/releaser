@@ -39,7 +39,7 @@
     "autoload-dev": {
         "psr-4": { "MTK\\Releaser\\Test\\": "test/" },
         "files": [
-            "config/dev_services.php",
+            "config/test_services.php",
             "test/Fixture/ChangeFixture.php",
             "test/Fixture/ReleaseFixture.php"
         ]
