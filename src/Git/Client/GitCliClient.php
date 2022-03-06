@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace MTK\Releaser\Git\Client;
 
 use MrRio\ShellWrap as sh;
-use MrRio\ShellWrapException;
 use MTK\Releaser\Git\GitClient;
 
 class GitCliClient implements GitClient
@@ -36,20 +35,14 @@ class GitCliClient implements GitClient
 
     public function hasUncommittedChanges(): bool
     {
-        //@TODO probably
-        try {
-            /* @phpstan-ignore-next-line */
-            sh::git('git', 'status', '--porcelain');
-        } catch (ShellWrapException $e) {
-            return true;
-        }
-
-        return false;
+        $output = [];
+        exec('git status --porcelain', $output);
+        return count($output) > 0;
     }
 
     public function getUsername(): string
     {
         /* @phpstan-ignore-next-line */
-        return sh::git('git', 'config', 'user.name');
+        return sh::git('config', 'user.name');
     }
 }
