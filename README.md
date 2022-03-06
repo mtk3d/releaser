@@ -73,8 +73,8 @@ publishers:
 
 ## TODO
 - [x] Refactor functional test for DI container usage
-- [ ] Fix git changes checking
-- [ ] Add wizard to create change
+- [x] Fix git changes checking
+- [x] Add wizard to create change
 - [ ] Write better docs
 - [ ] Add more publishers, and test custom publisher
 - [ ] Replace config library (actual cannot replace only a part of nested array defaults, like only single git parameter)
