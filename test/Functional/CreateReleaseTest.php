@@ -105,7 +105,7 @@ class CreateReleaseTest extends BaseTestCase
         $releaseOutput = self::getStreamOutput();
 
         $this->app->runCommand(
-            'release --ver=10-01-2022',
+            'release major --start-version=10-01-2022',
             $releaseOutput
         );
 
