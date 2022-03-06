@@ -28,12 +28,12 @@ class Application
                 ]
             );
 
-        $this->app->command('release [--ver=] [type]', ReleaseCommand::class)
+        $this->app->command('release [--start-version=] [semverPart]', ReleaseCommand::class)
             ->descriptions(
                 'Create and publish new release',
                 [
-                    'type' => 'Type of release [patch|major|minor|rc]',
-                    '--ver' => 'Version of next release (optional)',
+                    'semverPart' => 'Semver part to update [patch|major|minor|rc]',
+                    '--start-version' => 'Version of next release (optional)',
                 ]
             );
     }
